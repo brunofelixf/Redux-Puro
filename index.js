@@ -1,6 +1,8 @@
-//Actions Type
+//Importa o redux
+const redux = require('redux')
+const createStore = redux.createStore
 
-const { createStore } = require('redux')
+//Actions Type
 
 const LOGIN = 'LOGIN'
 const LOGOUT = 'LOGOUT'
@@ -42,21 +44,19 @@ function useReducer(prevState = initialState, action) {
         logged: false
       }
     default:
-      prevState
+      return prevState
   }
 }
 
 //Store
-//Importa o redux
-const redux = require('redux')
-const createStore = redux.createStore
+
 //Cria a store
 const store = createStore(useReducer)
 //exibe o estado inicial
-console.log('Estado Inicial: ' + store.getState())
+console.log('Estado Inicial: ', store.getState())
 //executa a ação de login
-store.dispach(login(Bruno))
-console.log('Após o Login: ' + store.getState())
+store.dispatch(login('Bruno'))
+console.log('Após o Login: ', store.getState())
 //executa a ação de logout
-store.dispach(logout())
-console.log('Após o Logout: ' + store.getState())
+store.dispatch(logout())
+console.log('Após o Logout: ', store.getState())
