@@ -1,4 +1,4 @@
-#Redux Puro
+# Redux Puro
 
 Estudo de Redux puro para fixar os conceitos.
 
