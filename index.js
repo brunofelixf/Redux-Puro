@@ -17,3 +17,24 @@ function logout() {
     type: 'LOGOUT'
   }
 }
+
+//Reducer
+
+function useReducer(prevState, action){
+  switch(action.type){
+    case: LOGIN:
+    return {
+      ...prevState,
+      user: action.payload,
+      logged: true
+    }
+    case: LOGOUT:
+    return {
+      ...prevState,
+      user: '',
+      logged: false
+    }
+    default: prevState
+  }
+}
+
